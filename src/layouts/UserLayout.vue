@@ -1,8 +1,11 @@
 <template>
-    <div id="basicLayout">
+    <div id="userLayout">
         <a-layout style="height: 100vh;">
             <a-layout-header class="header">
-                <GlobalHeader />
+                <a-space>
+                    <img src="../assets/logo.png" alt="" class="logo">
+                    <div>AI 答题平台</div>
+                </a-space>
             </a-layout-header>
             <a-layout-content class="content">
                 <router-view />
@@ -15,23 +18,28 @@
 </template>
 
 <script setup lang="ts">
-import GlobalHeader from '@/components/GlobalHeader.vue';
 
 
 </script>
 
 <style scoped>
-#basicLayout {
-    
+#userLayout {
+    text-align: center;
+    /* background: url("https://gw.alipayobjects.com/zos/rmsportal/FfdJeJRQWjEeGTpqgBKj.png") 0% 0% / 100% 100%; */
+    background: url("../assets/bg.JPG") 0% 0% / 100% 100%;
 }
 
-#basicLayout .header {
-    margin-bottom: 16px;
-    box-shadow: #000000 1px 1px 5px;
+#userLayout .logo {
+    height: 48px;
 }
+
+#userLayout .header {
+    margin-top: 16px;
+    font-size: 21px;
+}
+
 
 .content {
-    background-color: linear-gradient(to right, #fefefe, #fff);
     margin-bottom: 28px;
     padding: 20px;
 }
