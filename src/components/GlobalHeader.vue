@@ -14,7 +14,10 @@
             </a-menu>
         </a-col>
         <a-col flex="100px">
-            <div >
+            <div v-if="loginUserStore.loginUser.id">
+                {{ loginUserStore.loginUser.userName ?? "匿名用户" }}
+            </div>
+            <div v-else>
                 <a-button type="primary" href="/user/login">登录</a-button>
             </div>
         </a-col>
@@ -22,19 +25,27 @@
 </template>
 
 <script setup lang="ts">
+import checkAccess from '@/access/checkAccess';
 import { routes } from '@/router/routes';
+import { useLoginUserStore } from '@/store/userStore';
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
+
+const loginUserStore = useLoginUserStore();
 
 const router = useRouter();
 
 const selectedKeys = ref(["/"]);
-router.afterEach(() => {
-    selectedKeys.value = [router.currentRoute.value.path];
+router.afterEach((to, from, failure) => {
+  selectedKeys.value = [to.path];
 });
 
 const visibleRoutes = routes.filter((item) =>{
     if(item.meta?.hideInMenu){
+        return false;
+    }
+    // 根据权限过滤菜单
+    if (!checkAccess(loginUserStore.loginUser, item.meta?.access as string)){
         return false;
     }
     return true;
