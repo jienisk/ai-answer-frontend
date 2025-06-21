@@ -56,7 +56,7 @@ const initSearchParams = {
 const searchParams = ref<API.UserQueryRequest>({
     ...initSearchParams,
 });
-const dataList = ref<API.User[]>([]);
+const dataList = ref<API.User[]>([]);   
 const total = ref<number>(0);
 
 /**
