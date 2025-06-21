@@ -28,9 +28,14 @@ import GlobalHeader from '@/components/GlobalHeader.vue';
 #basicLayout .header {
     margin-bottom: 16px;
     box-shadow: #000000 1px 1px 5px;
+    color: white;
 }
 
 .content {
+    max-width: 1200px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
     background-color: linear-gradient(to right, #fefefe, #fff);
     margin-bottom: 28px;
     padding: 20px;
