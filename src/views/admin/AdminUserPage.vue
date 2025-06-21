@@ -36,7 +36,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watchEffect } from "vue"; //caonima
+import { ref, watchEffect } from "vue";
 import {
     deleteUserUsingPost,
     listUserByPageUsingPost,
@@ -48,7 +48,6 @@ import dayjs from "dayjs";
 const formSearchParams = ref<API.UserQueryRequest>({});
 
 // 初始化搜索条件（不应该被修改）
-//caonima
 const initSearchParams = {
     current: 1,
     pageSize: 10,
@@ -58,7 +57,7 @@ const searchParams = ref<API.UserQueryRequest>({
     ...initSearchParams,
 });
 const dataList = ref<API.User[]>([]);   
-const total = ref<number>(0);//asdasd
+const total = ref<number>(0);
 
 /**
  * 加载数据

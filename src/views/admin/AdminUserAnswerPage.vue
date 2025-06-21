@@ -217,7 +217,6 @@ const columns = [
     dataIndex: "updateTime",
     slotName: "updateTime",
   },
-  //caonima
   {
     title: "操作",
     slotName: "optional",
