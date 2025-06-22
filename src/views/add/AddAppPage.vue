@@ -1,6 +1,7 @@
 <template>
   <div id="addAppPage">
     <h2 style="margin-bottom: 32px">创建应用</h2>
+
     <a-form
       :model="form"
       :style="{ width: '480px' }"
@@ -56,7 +57,6 @@
       </a-form-item>
     </a-form>
   </div>
-  {{ form }}
 </template>
 
 <script setup lang="ts">
@@ -134,7 +134,7 @@ const handleSubmit = async () => {
   if (res.data.code === 0) {
     message.success("操作成功，即将跳转到应用详情页");
     setTimeout(() => {
-      router.push(`/app/detail/${props.id ?? res.data.data}`);
+      router.push(`/app/detail/${res.id ?? res.data.data}`);
     }, 3000);
   } else {
     message.error("操作失败，" + res.data.message);

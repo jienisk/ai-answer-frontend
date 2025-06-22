@@ -749,6 +749,7 @@ declare namespace API {
     updateTime?: string;
     user?: UserVO;
     userId?: number;
+    userAnswerIcon?: string;
   };
 
   type UserLoginRequest = {

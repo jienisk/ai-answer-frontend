@@ -28,7 +28,7 @@
 import checkAccess from '@/access/checkAccess';
 import { routes } from '@/router/routes';
 import { useLoginUserStore } from '@/store/userStore';
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 import { useRouter } from 'vue-router';
 
 const loginUserStore = useLoginUserStore();
@@ -40,7 +40,8 @@ router.afterEach((to, from, failure) => {
   selectedKeys.value = [to.path];
 });
 
-const visibleRoutes = routes.filter((item) =>{
+const visibleRoutes = computed(() => {
+    return routes.filter((item) =>{
     if(item.meta?.hideInMenu){
         return false;
     }
@@ -50,6 +51,7 @@ const visibleRoutes = routes.filter((item) =>{
     }
     return true;
 })
+});
 
 
 const doMenuClick =(key : string) => {
