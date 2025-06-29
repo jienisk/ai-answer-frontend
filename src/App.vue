@@ -13,6 +13,7 @@
 import BasicLayout from "@/layouts/BasicLayout.vue";
 import { onMounted } from "vue";
 import { useRoute } from "vue-router";
+import PictureUploader from "./components/PictureUploader.vue";
 
 
 

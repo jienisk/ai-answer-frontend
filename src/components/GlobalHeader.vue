@@ -64,7 +64,7 @@ const doMenuClick =(key : string) => {
 
 <style scoped>
 #globalHeader {
-    background-color: #001529;
+    background-color: #232324;
 }
 
 .titleBar {
