@@ -42,8 +42,15 @@ import GlobalHeader from '@/components/GlobalHeader.vue';
 }
 
 .footer {
-    background-color: #efefef;
+    background-color: #000000;
     text-align: center;
     padding: 16px;
+    font-size: 20px;
+    box-shadow: #000000 1px 1px 10px;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
 }
 </style>

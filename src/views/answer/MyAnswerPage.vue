@@ -47,10 +47,10 @@
       <a-image width="64" :src="record.resultPicture" />
     </template>
     <template #appType="{ record }">
-      {{ APP_TYPE_MAP[record.appType] }}
+      {{ APP_TYPE_MAP[record.appType as keyof typeof APP_TYPE_MAP] }}
     </template>
     <template #scoringStrategy="{ record }">
-      {{ APP_SCORING_STRATEGY_MAP[record.scoringStrategy] }}
+      {{ APP_SCORING_STRATEGY_MAP[record.scoringStrategy as keyof typeof APP_SCORING_STRATEGY_MAP] }}
     </template>
     <template #createTime="{ record }">
       {{ dayjs(record.createTime).format("YYYY-MM-DD HH:mm:ss") }}

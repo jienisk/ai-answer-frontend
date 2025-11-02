@@ -67,6 +67,9 @@ const appAnswerCountOptions = computed(() => {
  * 加载数据
  */
 const loadAppAnswerResultCountData = async (appId: string) => {
+  if (!appId) {
+    return;
+  }
   const res = await getAppAnswerResultCountUsingGet({
     appId: appId as any,
   });

@@ -27,7 +27,7 @@ interface Props {
  * 给组件指定初始值
  */
 const props = withDefaults(defineProps<Props>(), {
-  link: () => "https://laoyujianli.com/share/yupi",
+  link: () => "https://space.bilibili.com/103236330",
   title: () => "分享",
 });
 
