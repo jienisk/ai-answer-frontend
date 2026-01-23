@@ -26,7 +26,7 @@ router.beforeEach(async (to, from, next) => {
             loginUser.userRole === ACCESS_ENUM.NOT_LOGIN ||
         !loginUser.userRole || !loginUser
         ){
-            next(`user/login?redirect=${to.fullPath}`);
+            next(`user/login?redirect=${to.fullPath}`)
         }
         if(!checkAccess(loginUser, needAccess)){
             next("/noAuth")

@@ -14,9 +14,9 @@
             </a-menu>
         </a-col>
         <a-col flex="100px">
-            <div v-if="loginUserStore.loginUser.id">
+            <a-avatar v-if="loginUserStore.loginUser.id" style="background-color: aqua;color: black;">
                 {{ loginUserStore.loginUser.userName ?? "匿名用户" }}
-            </div>
+            </a-avatar>
             <div v-else>
                 <a-button type="primary" href="/user/login">登录</a-button>
             </div>

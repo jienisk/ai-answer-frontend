@@ -65,7 +65,7 @@
         <a-button
           v-if="record.reviewStatus !== REVIEW_STATUS_ENUM.PASS"
           status="success"
-          @click="doReview(record, REVIEW_STATUS_ENUM.PASS, '')"
+          @click="doReview(record, REVIEW_STATUS_ENUM.PASS, '你符合要求了')"
         >
           通过
         </a-button>
